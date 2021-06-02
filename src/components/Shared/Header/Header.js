@@ -16,9 +16,9 @@ const Header = () => {
                         <Nav className="ml-auto">
                             <Link to="/">Home</Link>
                             <Link to="/">About</Link>
-                            <Link to="/">Services</Link>
                             <Link to="/">Contact</Link>
-                            <Link to="/admin">Admin</Link>                            
+                            <Link to="/dashboard">Dashboard</Link>                            
+                            <Link to="/login">Login</Link>                            
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
