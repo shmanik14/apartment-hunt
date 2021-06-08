@@ -6,6 +6,8 @@ import Apartments from '../Apartments/Apartments';
 import HeaderTop from '../../Shared/HeaderTop/HeaderTop';
 import Feature from '../Feature/Feature';
 import Footer from '../../Shared/Footer/Footer';
+import Testimonials from '../Testimonials/Testimonials';
+import Counter from '../Counter/Counter';
 
 const Home = () => {
     return (
@@ -16,6 +18,8 @@ const Home = () => {
             <Search></Search>
             <Apartments></Apartments>
             <Feature></Feature>
+            <Counter></Counter>
+            <Testimonials></Testimonials>
             <Footer></Footer>
         </div>
     );

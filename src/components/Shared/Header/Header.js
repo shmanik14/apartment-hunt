@@ -10,12 +10,12 @@ const Header = () => {
         <div className="main-header">
             <div className="container">
                 <Navbar expand="lg">
-                    <Navbar.Brand href="#home"><img src={logo} alt="WeFix Logo"/></Navbar.Brand>
+                    <Link to="/"><img src={logo} alt="Apartment Hunt Logo"/></Link>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ml-auto">
                             <Link to="/">Home</Link>
-                            <Link to="/">About</Link>
+                            <Link to="/apartments">Apartments</Link>
                             <Link to="/">Contact</Link>
                             <Link to="/dashboard">Dashboard</Link>                            
                             <Link to="/login">Login</Link>                            
