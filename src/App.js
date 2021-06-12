@@ -3,11 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './components/Home/Home/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ApartmentDetails from './components/Home/ApartmentDetails/ApartmentDetails';
-import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import Login from './components/Login/Login/Login';
 import { Provider } from 'react-redux';
 import store from './redux/store/store';
 import ApartmentsForRent from './components/ApartmentsForRent/ApartmentsForRent';
+import Dashboard from './components/Dashboard/Dashboard';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute'
 
 
 function App() {
@@ -28,6 +29,9 @@ function App() {
             <Route path="/login">
               <Login />
             </Route>
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
           </Switch>
         </Router>
       </div>

@@ -39,6 +39,7 @@ button.apt-btn {
     border-color: #ff5a3c !important;
     padding: 8px 20px;
     font-weight: 500;
+    transition: all 1s ease;
 }
 button.apt-btn:hover{
     background-color: #fff;

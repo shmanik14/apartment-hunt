@@ -1,0 +1,26 @@
+.dashboard-sidebar{
+    height: 100vh;
+    color: #fff;
+    background: #3c4b64;
+}
+.dashboard-head{
+    color: #fff;
+    background: hsla(0,0%,100%,.05);
+    text-align: center;
+    padding: 13px 10px;
+    font-weight: 600;
+}
+.sidebar-menu{
+
+}
+.flex-column.sidebar-menu.nav a:hover {
+    background-color: darkred;
+    text-decoration: none;
+}
+.flex-column.sidebar-menu.nav a {
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 1s ease;
+}

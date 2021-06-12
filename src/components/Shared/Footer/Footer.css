@@ -26,7 +26,7 @@
     margin: 0;
 }
 .address ul li span{
-    color: red;
+    color: #ff5a3c;
     padding-right: 11px;
 }
 .quick-links ul li {
@@ -36,4 +36,9 @@
 .quick-links ul li a {
     color: #fff;
     font-size: 16px;
+    transition: all 1s ease;
+}
+.quick-links ul li a:hover {
+    color: #ff5a3c;
+    text-decoration: none;
 }

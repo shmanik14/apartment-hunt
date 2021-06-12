@@ -1,0 +1,28 @@
+.dashboard{
+    background:linear-gradient(120deg, #b92c27c2, rgba(0, 0, 0, 0.7)),url(../../images/counters.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+}
+.dashboard h1{
+    font-weight: 700;
+    font-size: 40px;
+}
+.dashboard-area{
+    background-color: #ebedef;
+}
+.dashboard-top {
+    background-color: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #d8dbe0;
+}
+.dashboard-top img{
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.dashboard-top span{
+    font-weight: 700;
+}

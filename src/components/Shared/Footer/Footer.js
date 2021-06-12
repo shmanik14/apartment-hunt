@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -26,10 +27,10 @@ const Footer = () => {
                             </div>
                             <div className="quick-links">
                                 <ul>
-                                    <li><a href="#" target="_blank" rel="noopener noreferrer">Aparments</a></li>
-                                    <li><a href="#" target="_blank" rel="noopener noreferrer">Services</a></li>
-                                    <li><a href="#" target="_blank" rel="noopener noreferrer">Login</a></li>
-                                    <li><a href="#" target="_blank" rel="noopener noreferrer">Contact</a></li>
+                                    <li><Link to="/apartments">Apartments</Link> </li>
+                                    <li><Link to="/contact">Contact</Link> </li>
+                                    <li><Link to="/dashboard">Dashboard</Link> </li>
+                                    <li><Link to="/login">Login</Link> </li>
                                 </ul>
                             </div>
                         </div>

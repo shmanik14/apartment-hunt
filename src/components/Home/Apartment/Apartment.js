@@ -4,6 +4,7 @@ import './Apartment.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { useHistory } from 'react-router-dom';
+import RippleButton from '../../Shared/RipleButton/RipleButton';
 
 const Apartment = ({ap}) => {
     const history = useHistory()
@@ -21,7 +22,7 @@ const Apartment = ({ap}) => {
                         <Card.Text>{ap.shortDesc}</Card.Text>
                     </Card.Body>
                     <div className="apartment-footer">
-                        <h4 className="price">{ap.price}</h4>
+                        <h4 className="price">{ap.price}</h4>                        
                         <Button onClick={() => handleBook(ap.id)} className="apt-btn" variant="primary">View Details</Button>
                     </div>
                 </Card>

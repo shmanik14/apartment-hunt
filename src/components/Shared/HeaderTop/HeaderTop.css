@@ -21,6 +21,7 @@
 .top-bar-menu ul li a,
 .top-bar-right ul li a  {
     color: #fff;
+    transition: all 1s ease;
 }
 .top-bar-menu ul li a:hover{
     text-decoration: none;

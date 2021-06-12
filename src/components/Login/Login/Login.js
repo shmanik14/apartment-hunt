@@ -20,13 +20,27 @@ import { faFacebookSquare, faGoogle, faTwitterSquare } from "@fortawesome/free-b
 import { setNewUser } from "../../../redux/actions/userActions";
 import { connect } from "react-redux";
 
-if (!firebase.apps.length) {
-    firebase.initializeApp(firebaseConfig);
-}
+export const initializeFramework = () => {
+	if (!firebase.apps.length) {
+		firebase.initializeApp(firebaseConfig);
+	}
+};
+
+export const logOutMethod = () => {
+	return firebase
+		.auth()
+		.signOut()
+		.then(() => {
+			// Sign-out successful.
+		})
+		.catch((error) => {
+			// An error happened.
+		});
+};
 
 const Login = (props) => {
     const { setNewUser, user } = props;
-
+    console.log(user)
     const googleProvider = new firebase.auth.GoogleAuthProvider();
 
     let history = useHistory();
@@ -102,7 +116,6 @@ const Login = (props) => {
             });
     };
 
-    // handles error in case it occurs
     const handleErrorMessage = (error) => {
         const errorMessage = error.message;
         const newUser = { ...user };
@@ -184,7 +197,6 @@ const Login = (props) => {
     const checkPasswords = () => {
         return password === confirmPassword;
     };
-
     return (
         <>
         <HeaderTop></HeaderTop>
@@ -272,13 +284,14 @@ const Login = (props) => {
                 </p>
             </form>
             <div className="social-login">
-                <h4>Or Continue With</h4>
-                <br />
-                <button onClick={handleGoogleLogin} className="login-btn">
-                <span><FontAwesomeIcon icon={faGoogle}/></span> Google</button>
-                <button className="login-btn" onClick={handleFacebookLogin}>
-                <span><FontAwesomeIcon icon={faFacebookSquare}/></span>Facebook</button>
-                <button className="login-btn"><span><FontAwesomeIcon icon={faTwitterSquare} /></span>Twitter</button>
+                    <h4>Or Continue With</h4>
+                    <br />
+                    <button onClick={handleGoogleLogin} className="login-btn">
+                    <span><FontAwesomeIcon icon={faGoogle}/></span> Google</button>
+                    <button className="login-btn" onClick={handleFacebookLogin}>
+                    <span><FontAwesomeIcon icon={faFacebookSquare}/></span>Facebook</button>
+                    <button className="login-btn"><span><FontAwesomeIcon icon={faTwitterSquare} /></span>Twitter</button>
+                    
             </div>
         </Container>
         </section>
