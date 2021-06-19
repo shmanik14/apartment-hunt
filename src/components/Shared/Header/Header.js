@@ -5,15 +5,29 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 import logo from '../../../images/logo.png';
 import { StickyContainer, Sticky } from 'react-sticky';
-import { initializeFramework, logOutMethod } from '../../Login/Login/Login';
+import firebase from "firebase/app";
+import "firebase/auth";
+import { firebaseConfig } from "../../Login/Login/firebase.config";
+import { setNewUser } from '../../../redux/actions/userActions';
+import { connect } from 'react-redux';
 
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+}
 
-const Header = () => {
-    initializeFramework();
-    const logOutHandle = () => {
-		logOutMethod();
-	};
-    const email = sessionStorage.getItem("email");
+const Header = (props) => { 
+    const { setNewUser, user } = props;
+    const signOut = () => {
+        firebase
+          .auth()
+          .signOut()
+          .then(() => {
+            setNewUser({});  
+          })
+          .catch((error) => {
+            // An error happened.
+          });
+      };
     return (
         <StickyContainer style={{ maxHeight: "100px", overflowY: "auto" }}>
             <Sticky relative={true} topOffset={80}>
@@ -30,7 +44,7 @@ const Header = () => {
                             <Link to="/">Contact</Link>
                             <Link to="/dashboard">Dashboard</Link> 
                             {
-                                email ? <Link onClick={logOutHandle}>Log Out</Link> : <Link to="/login">Login</Link>
+                               user.email ? <Link onClick={signOut}>Log Out</Link> : <Link to="/login">Login</Link>
                             }                           
                                                         
                         </Nav>
@@ -44,4 +58,13 @@ const Header = () => {
     );
 };
 
-export default Header;
+const mapStateToProps = (state) => {
+    return {
+        user: state.user,
+    };
+};
+
+const mapDispatchToProps = {
+    setNewUser: setNewUser,
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

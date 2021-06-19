@@ -26,21 +26,8 @@ export const initializeFramework = () => {
 	}
 };
 
-export const logOutMethod = () => {
-	return firebase
-		.auth()
-		.signOut()
-		.then(() => {
-			// Sign-out successful.
-		})
-		.catch((error) => {
-			// An error happened.
-		});
-};
-
 const Login = (props) => {
     const { setNewUser, user } = props;
-    console.log(user)
     const googleProvider = new firebase.auth.GoogleAuthProvider();
 
     let history = useHistory();
