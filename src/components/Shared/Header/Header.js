@@ -22,7 +22,11 @@ const Header = (props) => {
           .auth()
           .signOut()
           .then(() => {
-            setNewUser({});  
+            setNewUser({}); 
+            sessionStorage.removeItem('email'); 
+            sessionStorage.removeItem('name'); 
+            sessionStorage.removeItem('photo'); 
+            sessionStorage.removeItem('token'); 
           })
           .catch((error) => {
             // An error happened.
